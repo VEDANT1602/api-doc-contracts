@@ -1,0 +1,8 @@
+{
+  "authored_cases": 14,
+  "symbol_only_contracts_met": 7,
+  "signature_aware_contracts_met": 14,
+  "manual_review_cases": 2,
+  "executed_fixture_modules": 0,
+  "scope": "declared top-level Python function signatures only"
+}

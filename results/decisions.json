@@ -1,0 +1,2227 @@
+[
+  {
+    "id": "unchanged",
+    "expected_status": "matched",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  },
+  {
+    "id": "renamed_argument",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "cutoff",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "score",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.5"
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          },
+          "actual": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "cutoff",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.5"
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "cutoff",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "changed_default",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.75"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "score",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.5"
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          },
+          "actual": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.75"
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.75"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "removed_default",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "score",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.5"
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          },
+          "actual": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "changed_keyword_kind",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "score",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.5"
+              },
+              {
+                "name": "mode",
+                "kind": "keyword_only",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          },
+          "actual": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "values",
+                "kind": "positional_only",
+                "annotation": "list[float]",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "threshold",
+                "kind": "positional_or_keyword",
+                "annotation": "float",
+                "has_default": true,
+                "default": "0.5"
+              },
+              {
+                "name": "mode",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": true,
+                "default": "'strict'"
+              }
+            ],
+            "return_annotation": "float"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "changed_annotation",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "int",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "fetch",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": true,
+            "parameters": [
+              {
+                "name": "key",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "timeout",
+                "kind": "keyword_only",
+                "annotation": "float",
+                "has_default": true,
+                "default": "1.0"
+              }
+            ],
+            "return_annotation": "dict"
+          },
+          "actual": {
+            "async": true,
+            "parameters": [
+              {
+                "name": "key",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "timeout",
+                "kind": "keyword_only",
+                "annotation": "int",
+                "has_default": true,
+                "default": "1.0"
+              }
+            ],
+            "return_annotation": "dict"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "int",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "changed_return",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "list"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "fetch",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": true,
+            "parameters": [
+              {
+                "name": "key",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "timeout",
+                "kind": "keyword_only",
+                "annotation": "float",
+                "has_default": true,
+                "default": "1.0"
+              }
+            ],
+            "return_annotation": "dict"
+          },
+          "actual": {
+            "async": true,
+            "parameters": [
+              {
+                "name": "key",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "timeout",
+                "kind": "keyword_only",
+                "annotation": "float",
+                "has_default": true,
+                "default": "1.0"
+              }
+            ],
+            "return_annotation": "list"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "list"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "changed_async",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "fetch",
+          "kind": "declared_signature_drift",
+          "documented": {
+            "async": true,
+            "parameters": [
+              {
+                "name": "key",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "timeout",
+                "kind": "keyword_only",
+                "annotation": "float",
+                "has_default": true,
+                "default": "1.0"
+              }
+            ],
+            "return_annotation": "dict"
+          },
+          "actual": {
+            "async": false,
+            "parameters": [
+              {
+                "name": "key",
+                "kind": "positional_or_keyword",
+                "annotation": "str",
+                "has_default": false,
+                "default": null
+              },
+              {
+                "name": "timeout",
+                "kind": "keyword_only",
+                "annotation": "float",
+                "has_default": true,
+                "default": "1.0"
+              }
+            ],
+            "return_annotation": "dict"
+          }
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": false,
+    "signature_contract_met": true
+  },
+  {
+    "id": "removed_export",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "configure",
+          "kind": "documented_function_missing"
+        }
+      ],
+      "declared": {
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "configure",
+          "kind": "documented_function_missing"
+        }
+      ],
+      "declared": {
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  },
+  {
+    "id": "private_helper",
+    "expected_status": "matched",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  },
+  {
+    "id": "harmless_comment",
+    "expected_status": "matched",
+    "symbol_only": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "matched",
+      "issues": [],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  },
+  {
+    "id": "dynamic_exports",
+    "expected_status": "manual_review",
+    "symbol_only": {
+      "status": "manual_review",
+      "issues": [
+        "dynamic exports require runtime review"
+      ],
+      "declared": null
+    },
+    "signature_aware": {
+      "status": "manual_review",
+      "issues": [
+        "dynamic exports require runtime review"
+      ],
+      "declared": null
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  },
+  {
+    "id": "decorated_function",
+    "expected_status": "manual_review",
+    "symbol_only": {
+      "status": "manual_review",
+      "issues": [
+        "decorator may change the runtime signature"
+      ],
+      "declared": null
+    },
+    "signature_aware": {
+      "status": "manual_review",
+      "issues": [
+        "decorator may change the runtime signature"
+      ],
+      "declared": null
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  },
+  {
+    "id": "new_public_export",
+    "expected_status": "drift",
+    "symbol_only": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "ping",
+          "kind": "public_function_undocumented"
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "ping": {
+          "async": false,
+          "parameters": [],
+          "return_annotation": "bool"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "signature_aware": {
+      "status": "drift",
+      "issues": [
+        {
+          "name": "ping",
+          "kind": "public_function_undocumented"
+        }
+      ],
+      "declared": {
+        "configure": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "enabled",
+              "kind": "positional_or_keyword",
+              "annotation": "bool",
+              "has_default": true,
+              "default": "True"
+            },
+            {
+              "name": "options",
+              "kind": "var_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            }
+          ],
+          "return_annotation": "None"
+        },
+        "fetch": {
+          "async": true,
+          "parameters": [
+            {
+              "name": "key",
+              "kind": "positional_or_keyword",
+              "annotation": "str",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "timeout",
+              "kind": "keyword_only",
+              "annotation": "float",
+              "has_default": true,
+              "default": "1.0"
+            }
+          ],
+          "return_annotation": "dict"
+        },
+        "ping": {
+          "async": false,
+          "parameters": [],
+          "return_annotation": "bool"
+        },
+        "score": {
+          "async": false,
+          "parameters": [
+            {
+              "name": "values",
+              "kind": "positional_only",
+              "annotation": "list[float]",
+              "has_default": false,
+              "default": null
+            },
+            {
+              "name": "threshold",
+              "kind": "positional_or_keyword",
+              "annotation": "float",
+              "has_default": true,
+              "default": "0.5"
+            },
+            {
+              "name": "mode",
+              "kind": "keyword_only",
+              "annotation": "str",
+              "has_default": true,
+              "default": "'strict'"
+            }
+          ],
+          "return_annotation": "float"
+        }
+      }
+    },
+    "symbol_only_contract_met": true,
+    "signature_contract_met": true
+  }
+]

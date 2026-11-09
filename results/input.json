@@ -1,0 +1,144 @@
+{
+  "base_source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+  "documented_manifest": {
+    "configure": {
+      "async": false,
+      "parameters": [
+        {
+          "name": "enabled",
+          "kind": "positional_or_keyword",
+          "annotation": "bool",
+          "has_default": true,
+          "default": "True"
+        },
+        {
+          "name": "options",
+          "kind": "var_keyword",
+          "annotation": "str",
+          "has_default": false,
+          "default": null
+        }
+      ],
+      "return_annotation": "None"
+    },
+    "fetch": {
+      "async": true,
+      "parameters": [
+        {
+          "name": "key",
+          "kind": "positional_or_keyword",
+          "annotation": "str",
+          "has_default": false,
+          "default": null
+        },
+        {
+          "name": "timeout",
+          "kind": "keyword_only",
+          "annotation": "float",
+          "has_default": true,
+          "default": "1.0"
+        }
+      ],
+      "return_annotation": "dict"
+    },
+    "score": {
+      "async": false,
+      "parameters": [
+        {
+          "name": "values",
+          "kind": "positional_only",
+          "annotation": "list[float]",
+          "has_default": false,
+          "default": null
+        },
+        {
+          "name": "threshold",
+          "kind": "positional_or_keyword",
+          "annotation": "float",
+          "has_default": true,
+          "default": "0.5"
+        },
+        {
+          "name": "mode",
+          "kind": "keyword_only",
+          "annotation": "str",
+          "has_default": true,
+          "default": "'strict'"
+        }
+      ],
+      "return_annotation": "float"
+    }
+  },
+  "cases": [
+    {
+      "id": "unchanged",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "matched"
+    },
+    {
+      "id": "renamed_argument",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, cutoff: float = 0.5, *, mode: str = 'strict') -> float:\n    return cutoff\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "changed_default",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.75, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "removed_default",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "changed_keyword_kind",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "changed_annotation",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: int = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "changed_return",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> list:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "changed_async",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\ndef fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "removed_export",
+      "source": "__all__ = ['score', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "drift"
+    },
+    {
+      "id": "private_helper",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n\ndef _internal(x):\n    return x\n",
+      "expected_status": "matched"
+    },
+    {
+      "id": "harmless_comment",
+      "source": "# a harmless authored note\n__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "matched"
+    },
+    {
+      "id": "dynamic_exports",
+      "source": "__all__ = build_exports()\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "manual_review"
+    },
+    {
+      "id": "decorated_function",
+      "source": "__all__ = ['score', 'configure', 'fetch']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\n@runtime_wrapper\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n",
+      "expected_status": "manual_review"
+    },
+    {
+      "id": "new_public_export",
+      "source": "__all__ = ['score', 'configure', 'fetch', 'ping']\n\ndef score(values: list[float], /, threshold: float = 0.5, *, mode: str = 'strict') -> float:\n    return threshold\n\ndef configure(enabled: bool = True, **options: str) -> None:\n    pass\n\nasync def fetch(key: str, *, timeout: float = 1.0) -> dict:\n    return {}\n\ndef ping() -> bool:\n    return True\n",
+      "expected_status": "drift"
+    }
+  ]
+}
