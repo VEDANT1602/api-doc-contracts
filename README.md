@@ -1,28 +1,18 @@
 # API Documentation Contracts
 
-**Documentation drift can start with one changed default.**
+A Python function can keep its name while changing which calls it accepts. Changing a keyword-only parameter, its default, or whether callers must await the result is enough to make a reference page stale.
 
-I separated documentation generation from a narrower CI decision: does the documented declared interface still match the source? A file or function name can remain unchanged while a required argument, keyword-only constraint, annotation or async contract changes. My framework is **parse without execution → resolve explicit exports → compare typed signatures → flag drift or require review**.
+The [checker](core.py) parses top-level definitions and explicit exports from source text. It compares the declared signatures and routes dynamic exports or decorators to manual review. A side-effect tripwire in the [tests](tests/test_contracts.py#L33) would create a file if its fixture module were executed. Extracting its signature leaves the file absent.
 
-The implementation uses Python ASTs over original source fixtures. A symbol-only baseline shares the same export boundary so the comparison isolates signature checking. [The report](results/report.md) keeps every authored mutation and its outcome. Dynamic exports and decorators produce a manual-review result; this tool does not invent runtime certainty.
+Across 14 authored interface changes and controls, signature checking produced the expected outcome in all 14 cases. Checking symbol names alone did so in seven. Two expected outcomes were requests for manual review. These are decisions about declared interfaces. They establish neither runtime behavior under arbitrary decorators nor the quality of the documentation prose. [Mutation-by-mutation decisions](results/decisions.json) · [Counts](results/metrics.json)
 
+## Run the signature checks
 
-## Recorded result
-
-Signature-aware checking meets **14/14 authored contracts**, versus **7/14** for symbol-only checking. **2** cases require review. Fixture modules executed: **0**. Extra boundary tests cover conditional export mutation and function-local export names. These pass counts do not measure documentation prose quality.
-
-## Reproduce and inspect
-
-Python 3.11, CPU only. No API keys, paid services, provider calls, customer records or external data download.
+Use Python 3.11 so that the AST parser matches the recorded experiment.
 
 ```bash
-python -m venv .venv
-# Activate the environment for your shell.
-python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python run.py --output runs/local
 ```
 
-`core.py` contains the generator and actual comparison. `data/dataset.json` is the committed original input. `results/decisions.json` preserves the evaluated rows/traces. `results/metrics.json` and `results/report.md` state the measured outcomes. `results/manifest.json` binds core source, input, and output bytes with SHA-256. A fresh run writes to the requested directory and leaves committed results available for comparison.
-
-This is a new independent portfolio experiment. Its results do not establish historical employer/client outcomes, production adoption, or service scale. Read the [data card](docs/data-card.md) and [provenance](docs/provenance.md) before interpreting the numbers.
+[Data card](docs/data-card.md) · [Run manifest](results/manifest.json) · [Source and contribution notes](docs/provenance.md)
